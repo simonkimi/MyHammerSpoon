@@ -1,6 +1,5 @@
-
 function IsCodeWindows()
-    local codeWindows = {"CLion", "Code"};
+    local codeWindows = { "CLion", "Code", "PyCharm", "Sublime Text", "WebStorm", "IntelliJ IDEA", "GLand" }
     local win = hs.window.focusedWindow()
     local app = win:application()
     local appName = app:name()
@@ -18,7 +17,6 @@ function SendKey(key)
     end
 end
 
-
 hs.hotkey.bind("", "`", hs.fnutils.partial(SendKey, "`"))
 hs.hotkey.bind("", "'", hs.fnutils.partial(SendKey, "'"))
 hs.hotkey.bind("", "\\", hs.fnutils.partial(SendKey, "\\"))
@@ -31,4 +29,3 @@ hs.hotkey.bind("shift", "]", hs.fnutils.partial(SendKey, "}"))
 hs.hotkey.bind("shift", "'", hs.fnutils.partial(SendKey, '"'))
 hs.hotkey.bind("shift", ",", hs.fnutils.partial(SendKey, '<'))
 hs.hotkey.bind("shift", ".", hs.fnutils.partial(SendKey, '>'))
-
