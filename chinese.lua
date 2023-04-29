@@ -3,7 +3,7 @@ function IsCodeWindows()
     local win = hs.window.focusedWindow()
     local app = win:application()
     local appName = app:name()
-    for i, v in ipairs(codeWindows) do
+    for _, v in ipairs(codeWindows) do
         if v == appName then
             return true
         end
@@ -12,9 +12,7 @@ function IsCodeWindows()
 end
 
 function SendKey(key)
-    if IsCodeWindows() then
-        hs.eventtap.keyStrokes(key)
-    end
+    hs.eventtap.keyStrokes(key)
 end
 
 hs.hotkey.bind("", "`", hs.fnutils.partial(SendKey, "`"))
@@ -29,3 +27,4 @@ hs.hotkey.bind("shift", "]", hs.fnutils.partial(SendKey, "}"))
 hs.hotkey.bind("shift", "'", hs.fnutils.partial(SendKey, '"'))
 hs.hotkey.bind("shift", ",", hs.fnutils.partial(SendKey, '<'))
 hs.hotkey.bind("shift", ".", hs.fnutils.partial(SendKey, '>'))
+
