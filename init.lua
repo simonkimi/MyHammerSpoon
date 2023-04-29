@@ -1,5 +1,4 @@
 require "reload"
-require "speaker"
 require "window"
 require "chinese"
 

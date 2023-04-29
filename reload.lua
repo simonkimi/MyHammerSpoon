@@ -1,13 +1,12 @@
-
 function ReloadConfig(paths)
-    local doReload = false
-    for _,file in pairs(paths) do
+    DoReload = false
+    for _, file in pairs(paths) do
         if file:sub(-4) == ".lua" then
             print("A lua config file changed, reload")
-            doReload = true
+            DoReload = true
         end
     end
-    if not doReload then
+    if not DoReload then
         print("No lua file changed, skipping reload")
         return
     end
@@ -17,4 +16,3 @@ end
 
 local configFileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", ReloadConfig)
 configFileWatcher:start()
-

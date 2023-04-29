@@ -19,10 +19,16 @@ function SendKey(key)
 end
 
 
-
-
-hs.hotkey.bind("shift", "'", hs.fnutils.partial(SendKey, '"'))
+hs.hotkey.bind("", "`", hs.fnutils.partial(SendKey, "`"))
 hs.hotkey.bind("", "'", hs.fnutils.partial(SendKey, "'"))
+hs.hotkey.bind("", "\\", hs.fnutils.partial(SendKey, "\\"))
+
+hs.hotkey.bind("shift", "4", hs.fnutils.partial(SendKey, "$"))
 hs.hotkey.bind("shift", "6", hs.fnutils.partial(SendKey, "^"))
+hs.hotkey.bind("shift", "-", hs.fnutils.partial(SendKey, '_'))
 hs.hotkey.bind("shift", "[", hs.fnutils.partial(SendKey, "{"))
 hs.hotkey.bind("shift", "]", hs.fnutils.partial(SendKey, "}"))
+hs.hotkey.bind("shift", "'", hs.fnutils.partial(SendKey, '"'))
+hs.hotkey.bind("shift", ",", hs.fnutils.partial(SendKey, '<'))
+hs.hotkey.bind("shift", ".", hs.fnutils.partial(SendKey, '>'))
+
